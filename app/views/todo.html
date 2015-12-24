@@ -1,0 +1,14 @@
+this is todo page
+{{msg}}
+
+<input type="text" ng-model="msg">
+<ul>
+	<li ng-repeat="todo in todos| filter: msg" ng-class="todo.status? 'active': ''">{{todo.name}}&nbsp;{{todo.trainer}}<input type="checkbox" ng-click="markComplete(todo.name)" ng-checked="todo.status"><a href="" ng-click="deleteTask(todo)">delete</a></li>
+
+</ul>
+
+<form ng-submit="addNewTask(task)">
+	<input type="text" ng-model="task.name">
+	<input type="text" ng-model="task.trainer">
+	<button type="submit">Submit</button>
+</form>
